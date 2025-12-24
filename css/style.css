@@ -199,6 +199,17 @@ body {
 /* =========================
    modale
 ========================= */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -209,11 +220,13 @@ body {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
 
-  padding: 20px;
+  padding: 25px;
   z-index: 20;
 
-  min-width: 320px;
+  min-width: 420px;
+  max-width: 500px;
   box-shadow: var(--shadow);
+  animation: slideIn 0.4s ease-out;
 }
 
 .modal h2 {
@@ -265,20 +278,33 @@ body {
 }
 
 #form-contact input {
-  padding: 10px 12px;
+  padding: 12px 14px;
 
-  border: 1px solid var(--border-soft);
+  border: 2px solid var(--border-soft);
   border-radius: 8px;
 
   background-color: #fbfdff;
   color: var(--text-main);
 
   outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+#form-contact input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+#form-contact input:hover {
+  border-color: var(--primary-soft);
+  background-color: #fff;
 }
 
 #form-contact input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(127, 174, 199, 0.25);
+  border-color: var(--primary-soft);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(74, 114, 136, 0.15);
 }
 
 /* bouton valider */
@@ -286,25 +312,34 @@ body {
   background-color: #999;
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: not-allowed;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 #btn-valider:disabled {
-  background-color: #999;
+  background-color: #ccc;
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 #btn-valider:enabled {
-  background-color: #4caf50;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
   cursor: pointer;
 }
 
 #btn-valider:enabled:hover {
-  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+#btn-valider:enabled:active {
+  transform: translateY(0);
 }
 
 .error-message {
