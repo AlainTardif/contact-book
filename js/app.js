@@ -26,14 +26,16 @@ function openModal() {
 
 function closeModal() {
   modal.classList.remove('show');
-  // Attendre la fin de l'animation avant de cacher
+  modal.classList.add('closing');
+  
   setTimeout(() => {
+    modal.classList.remove('closing');
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
     form.reset();
     btnValider.disabled = true;
     errorMessage.classList.remove('show');
-  }, 700);
+  }, 500);
 }
 
 // ========== VALIDATION DES CHAMPS ==========

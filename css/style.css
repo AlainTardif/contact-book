@@ -167,7 +167,6 @@ body {
 }
 
 /* Modale */
-/* Modale */
 .modal {
   position: fixed;
   top: 50%;
@@ -187,6 +186,12 @@ body {
 .modal.show {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+.modal.closing {
+  transform: translate(100%, -50%) scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
 }
 
 .modal h2 {
