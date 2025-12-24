@@ -88,6 +88,10 @@ body {
   background-color: var(--surface);
 }
 
+.form-display span {
+  flex: 1;
+}
+
 .form-display span:first-child {
   text-align: left;
 }
@@ -217,7 +221,6 @@ body {
 }
 
 /* Formulaire modale */
-/* Formulaire modale */
 #form-contact {
   display: flex;
   flex-direction: column;
@@ -240,6 +243,10 @@ body {
 .input-group {
   position: relative;
   margin-bottom: 20px;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 0;
 }
 
 .input-group input {
@@ -279,6 +286,7 @@ body {
   color: var(--primary);
 }
 
+/* Bouton valider */
 #btn-valider {
   background-color: var(--border);
   color: var(--text-muted);
@@ -302,6 +310,7 @@ body {
   background-color: #326d8a;
 }
 
+/* Message erreur */
 .error-message {
   color: #dc2626;
   font-size: 0.85rem;
