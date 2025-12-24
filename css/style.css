@@ -63,16 +63,15 @@ body {
 }
 
 /* Formulaire affichage */
-/* Formulaire affichage */
 .form-display {
-  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
   border: 1px solid #333;
   border-radius: 4px;
   margin-bottom: 15px;
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1rem;
+  color: #999;
 }
 
 
