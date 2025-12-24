@@ -131,7 +131,7 @@ body {
   border: 1px solid var(--border-soft);
   border-radius: 8px;
 
-  text-align: left;
+  text-align: center;
   font-size: 0.9rem;
   color: var(--text-muted);
 
