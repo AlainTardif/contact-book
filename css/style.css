@@ -281,35 +281,38 @@ body {
 
 /* bouton valider */
 #btn-valider {
-  background-color: var(--accent);
-  color: #ffffff;
-
+  background-color: #999;
+  color: white;
   border: none;
-  padding: 12px;
-
-  border-radius: 10px;
-  cursor: pointer;
-
-  margin-top: 6px;
-  font-weight: 600;
-
-  transition: transform 0.08s ease, filter 0.15s ease;
-}
-
-#btn-valider:hover {
-  filter: brightness(0.95);
-}
-
-#btn-valider:active {
-  transform: scale(0.99);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: not-allowed;
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 #btn-valider:disabled {
-  background-color: #cbd5e1;
-  color: #ffffff;
+  background-color: #999;
   cursor: not-allowed;
-  filter: none;
 }
+
+#btn-valider:enabled {
+  background-color: #4caf50;
+  cursor: pointer;
+}
+
+#btn-valider:enabled:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
 
 /* =========================
    utilitaires

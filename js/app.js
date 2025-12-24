@@ -6,6 +6,7 @@ const overlay = document.getElementById('overlay');
 const form = document.getElementById('form-contact');
 const btnValider = document.getElementById('btn-valider');
 const contactsList = document.getElementById('contacts-list');
+const errorMessage = document.getElementById('error-message');
 
 // Champs du formulaire
 const inputNom = document.getElementById('input-nom');
@@ -24,17 +25,25 @@ function closeModal() {
   overlay.classList.add('hidden');
   form.reset();
   btnValider.disabled = true;
+  errorMessage.classList.add('hidden');
 }
 
 // ========== VALIDATION DES CHAMPS ==========
 function checkFormValidity() {
-  const isValid = 
-    inputNom.value.trim() !== '' &&
-    inputPrenom.value.trim() !== '' &&
-    inputEmail.value.trim() !== '' &&
-    inputTelephone.value.trim() !== '';
+  const isEmpty = 
+    inputNom.value.trim() === '' ||
+    inputPrenom.value.trim() === '' ||
+    inputEmail.value.trim() === '' ||
+    inputTelephone.value.trim() === '';
   
-  btnValider.disabled = !isValid;
+  if (isEmpty) {
+    errorMessage.textContent = 'Tous les champs doivent être remplis';
+    errorMessage.classList.remove('hidden');
+    btnValider.disabled = true;
+  } else {
+    errorMessage.classList.add('hidden');
+    btnValider.disabled = false;
+  }
 }
 
 // ========== AFFICHER UN CONTACT ==========
