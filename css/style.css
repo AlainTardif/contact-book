@@ -17,7 +17,7 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  border: 2px solid #00bcd4;
+  border: 2px solid #5a9fb8;
   border-radius: 8px;
   padding: 20px;
 }
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00bcd4;
+  background-color: #5a9fb8;
   padding: 10px 15px;
   border-radius: 4px;
   margin-bottom: 15px;
@@ -66,15 +66,17 @@ body {
 .form-display span {
   flex: 1;
   padding: 8px;
-  border: 1px solid #444;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  text-align: center;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #999;
 }
 
 /* Séparateur résultat */
 .result-divider {
-  background-color: #ff9800;
-  color: #1a1a2e;
+  background-color: #e0a050;
+  color: #fff;
   text-align: center;
   padding: 8px;
   border-radius: 4px;
