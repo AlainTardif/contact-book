@@ -10,7 +10,7 @@
 
   <div class="wrapper">
 
-    <!-- Header (en dehors du formulaire) -->
+    <!-- Header -->
     <header class="header">
       <h1>Contact Book</h1>
       <button id="btn-open-modal" class="btn-add">+</button>
@@ -34,7 +34,7 @@
 
     </div>
 
-    <!-- Footer (en dehors du formulaire) -->
+    <!-- Footer -->
     <footer class="footer">
       (c) 2025 - Acme Corp.
     </footer>
@@ -45,34 +45,38 @@
   <div id="overlay" class="overlay hidden"></div>
 
   <!-- Modale -->
- <form id="form-contact">
-  <fieldset>
-    <legend>Informations du contact</legend>
+  <div id="modal" class="modal hidden">
+    <button id="btn-close-modal" class="btn-close">×</button>
     
-    <div class="input-group">
-      <input type="text" id="input-nom" placeholder=" " required>
-      <label for="input-nom">Nom</label>
-    </div>
-    
-    <div class="input-group">
-      <input type="text" id="input-prenom" placeholder=" " required>
-      <label for="input-prenom">Prénom</label>
-    </div>
-    
-    <div class="input-group">
-      <input type="email" id="input-email" placeholder=" " required>
-      <label for="input-email">Email</label>
-    </div>
-    
-    <div class="input-group">
-      <input type="tel" id="input-telephone" placeholder=" " required>
-      <label for="input-telephone">Téléphone</label>
-    </div>
-  </fieldset>
-  
-  <p id="error-message" class="error-message"></p>
-  <button type="submit" id="btn-valider" disabled>Valider</button>
-</form>
+    <form id="form-contact">
+      <fieldset>
+        <legend>Informations du contact</legend>
+        
+        <div class="input-group">
+          <input type="text" id="input-nom" placeholder=" " required>
+          <label for="input-nom">Nom</label>
+        </div>
+        
+        <div class="input-group">
+          <input type="text" id="input-prenom" placeholder=" " required>
+          <label for="input-prenom">Prénom</label>
+        </div>
+        
+        <div class="input-group">
+          <input type="email" id="input-email" placeholder=" " required>
+          <label for="input-email">Email</label>
+        </div>
+        
+        <div class="input-group">
+          <input type="tel" id="input-telephone" placeholder=" " required>
+          <label for="input-telephone">Téléphone</label>
+        </div>
+      </fieldset>
+      
+      <p id="error-message" class="error-message"></p>
+      <button type="submit" id="btn-valider" disabled>Valider</button>
+    </form>
+  </div>
 
   <script src="js/app.js"></script>
 </body>
