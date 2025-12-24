@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Book</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Conteneur principal -->
+  <div class="container">
+    
+    <!-- En-tête avec titre et bouton + -->
+    <header class="header">
+      <h1>Contact Book</h1>
+      <button id="btn-open-modal" class="btn-add">+</button>
+    </header>
+
+    <!-- Formulaire d'affichage (1 ligne) -->
+    <div class="form-display">
+      <span>Nom</span>
+      <span>Prénom</span>
+      <span>Email</span>
+    </div>
+
+    <!-- Séparateur résultat -->
+    <div class="result-divider">Résultat de la modale</div>
+
+    <!-- Liste des contacts ajoutés -->
+    <div id="contacts-list"></div>
+
+  </div>
+
+  <!-- Overlay (grise le fond) -->
+  <div id="overlay" class="overlay hidden"></div>
+
+  <!-- Modale -->
+  <div id="modal" class="modal hidden">
+    <button id="btn-close-modal" class="btn-close">×</button>
+    <h2>Nouveau contact</h2>
+    
+    <form id="form-contact">
+      <label>Nom:
+        <input type="text" id="input-nom" required>
+      </label>
+      
+      <label>Prénom:
+        <input type="text" id="input-prenom" required>
+      </label>
+      
+      <label>Email:
+        <input type="email" id="input-email" required>
+      </label>
+      
+      <label>Téléphone:
+        <input type="tel" id="input-telephone" required>
+      </label>
+      
+      <button type="submit" id="btn-valider" disabled>Valider</button>
+    </form>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
