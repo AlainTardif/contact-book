@@ -32,7 +32,7 @@ function closeModal() {
     overlay.classList.add('hidden');
     form.reset();
     btnValider.disabled = true;
-    errorMessage.classList.add('hidden');
+    errorMessage.classList.remove('show');
   }, 500);
 }
 
@@ -46,10 +46,10 @@ function checkFormValidity() {
   
   if (isEmpty) {
     errorMessage.textContent = 'Tous les champs doivent être remplis';
-    errorMessage.classList.remove('hidden');
+    errorMessage.classList.add('show');
     btnValider.disabled = true;
   } else {
-    errorMessage.classList.add('hidden');
+    errorMessage.classList.remove('show');
     btnValider.disabled = false;
   }
 }

@@ -244,6 +244,12 @@ body {
   color: #dc2626;
   font-size: 0.85rem;
   text-align: center;
+  min-height: 20px;
+  visibility: hidden;
+}
+
+.error-message.show {
+  visibility: visible;
 }
 
 /* Classe utilitaire */
