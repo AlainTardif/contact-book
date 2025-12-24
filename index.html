@@ -8,33 +8,40 @@
 </head>
 <body>
 
-  <!-- Conteneur principal -->
-  <div class="container">
-    
-    <!-- En-tête avec titre et bouton + -->
+  <div class="wrapper">
+
+    <!-- Header (en dehors du formulaire) -->
     <header class="header">
       <h1>Contact Book</h1>
       <button id="btn-open-modal" class="btn-add">+</button>
     </header>
 
-    <!-- Formulaire d'affichage (1 ligne) -->
-    <div class="form-display">
-      <span>Nom</span>
-      <span>Prénom</span>
-      <span>Email</span>
+    <!-- Conteneur formulaire -->
+    <div class="container">
+      
+      <!-- Ligne Nom / Prénom / Email -->
+      <div class="form-display">
+        <span>Nom</span>
+        <span>Prénom</span>
+        <span>Email</span>
+      </div>
+
+      <!-- Séparateur résultat -->
+      <div class="result-divider">Résultat de la modale</div>
+
+      <!-- Liste des contacts ajoutés -->
+      <div id="contacts-list"></div>
+
     </div>
 
-    <!-- Séparateur résultat -->
-    <div class="result-divider">Résultat de la modale</div>
-
-    <!-- Liste des contacts ajoutés -->
-    <div id="contacts-list"></div>
-      <footer class="footer">
+    <!-- Footer (en dehors du formulaire) -->
+    <footer class="footer">
       (c) 2025 - Acme Corp.
     </footer>
+
   </div>
 
-  <!-- Overlay (grise le fond) -->
+  <!-- Overlay -->
   <div id="overlay" class="overlay hidden"></div>
 
   <!-- Modale -->
@@ -44,20 +51,21 @@
     
     <form id="form-contact">
       <label>Nom:
-        <input type="text" id="input-nom" placeholder="" required>
+        <input type="text" id="input-nom" required>
       </label>
       
       <label>Prénom:
-        <input type="text" id="input-prenom" placeholder="" required>
+        <input type="text" id="input-prenom" required>
       </label>
       
       <label>Email:
-        <input type="email" id="input-email" placeholder="" required>
+        <input type="email" id="input-email" required>
       </label>
       
       <label>Téléphone:
-        <input type="tel" id="input-telephone" placeholder="" required>
+        <input type="tel" id="input-telephone" required>
       </label>
+      
       <p id="error-message" class="error-message hidden"></p>
       <button type="submit" id="btn-valider" disabled>Valider</button>
     </form>

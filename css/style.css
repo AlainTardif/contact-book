@@ -1,163 +1,99 @@
-/* =========================
-   reset de base
-========================= */
+/* Reset de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   variables couleurs (design system)
-========================= */
-:root {
-  --bg-page: #f4f7fb;
-  --surface: #ffffff;
-
-  --primary: #fff;        /* bleu pastel */
-  --primary-soft: #4a7288;   /* bleu très clair */
-  --accent: #a6c8b8;         /* vert doux */
-
-  --border-soft: #dce6ee;
-  --border-strong: #c8d6e2;
-
-  --text-main: #2b2b2b;
-  --text-muted: #6b7280;
-
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --radius: 10px;
-}
-
-/* =========================
-   page
-========================= */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #d4dce6 0%, #c5d3dd 100%);
-  color: var(--text-main);
+  background: linear-gradient(135deg, #5a9fb8 0%, #e0a050 100%);
+  color: #333;
   min-height: 100vh;
   padding: 20px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* =========================
-   conteneur principal
-========================= */
-.container {
+/* Wrapper global */
+.wrapper {
   max-width: 900px;
   width: 100%;
-  margin: 0 auto;
-
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: 20px;
-
-  background-color: var(--surface);
-  box-shadow: var(--shadow);
 }
 
-/* =========================
-   header
-========================= */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background-color: var(--primary-soft);
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  width: 100%;
-
-  border: 1px solid var(--border-soft);
+  background-color: #5a9fb8;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .header h1 {
   font-size: 1.2rem;
-  color: var(--primary);
-  font-weight: 600;
+  color: #fff;
 }
 
-/* bouton + */
 .btn-add {
-  background-color: var(--accent);
-  color: #ffffff;
-
+  background-color: #4caf50;
+  color: white;
   border: none;
-  width: 34px;
-  height: 34px;
-
+  width: 30px;
+  height: 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 8px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.08s ease, filter 0.15s ease;
+  border-radius: 4px;
 }
 
 .btn-add:hover {
-  filter: brightness(0.95);
+  background-color: #45a049;
 }
 
-.btn-add:active {
-  transform: scale(0.98);
+/* Container formulaire */
+.container {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================
-   formulaire affichage
-========================= */
+/* Formulaire affichage */
 .form-display {
   display: flex;
   gap: 10px;
-
-  padding: 12px;
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
   margin-bottom: 15px;
-  background-color: #f9fbfd;
 }
 
 .form-display span {
   flex: 1;
-  padding: 10px;
-
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-
-  background-color: var(--surface);
+  font-size: 0.85rem;
+  color: #999;
 }
 
-/* =========================
-   séparateur résultat
-========================= */
+/* Séparateur résultat */
 .result-divider {
-  background-color: var(--primary-soft);
-  color: var(--primary);
-
+  background-color: #e0a050;
+  color: #333;
   text-align: center;
-  padding: 10px;
-
-  border-radius: 8px;
-  font-weight: 600;
-
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
   margin-bottom: 15px;
-  border: 1px solid var(--border-soft);
 }
 
-/* =========================
-   liste des contacts
-========================= */
+/* Liste des contacts */
 #contacts-list {
   display: flex;
   flex-direction: column;
@@ -167,185 +103,13 @@ body {
 .contact-row {
   display: flex;
   gap: 10px;
-
-  padding: 12px;
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-
-  background-color: var(--surface);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .contact-row span {
   flex: 1;
-  text-align: center;
-  color: var(--text-main);
-}
-
-/* =========================
-   overlay
-========================= */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(15, 23, 42, 0.55);
-  z-index: 10;
-}
-
-/* =========================
-   modale
-========================= */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -60%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  background-color: var(--surface);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-
-  padding: 25px;
-  z-index: 20;
-
-  min-width: 420px;
-  max-width: 500px;
-  box-shadow: var(--shadow);
-  animation: slideIn 0.4s ease-out;
-}
-
-.modal h2 {
-  margin-bottom: 15px;
-  color: var(--primary);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.btn-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  background: none;
-  border: none;
-
-  color: var(--text-muted);
-  font-size: 1.5rem;
-  cursor: pointer;
-
-  padding: 4px 8px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-close:hover {
-  background-color: var(--primary-soft);
-  color: var(--primary);
-  transform: scale(1.15);
-}
-
-/* =========================
-   formulaire modale
-========================= */
-#form-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#form-contact label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-  color: var(--text-main);
-  font-size: 0.95rem;
-}
-
-#form-contact input {
-  padding: 12px 14px;
-
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-
-  background-color: #fbfdff;
-  color: var(--text-main);
-
-  outline: none;
-  transition: box-shadow 0.3s ease, background-color 0.2s ease;
-  font-size: 0.95rem;
-}
-
-#form-contact input::placeholder {
-  color: var(--text-muted);
-  opacity: 0.7;
-}
-
-#form-contact input:hover {
-  border-color: var(--primary-soft);
-  background-color: #fff;
-}
-
-#form-contact input:focus {
-  border-color: var(--primary-soft);
-  background-color: #fff;
-  box-shadow: 0 0 0 4px rgba(74, 114, 136, 0.15);
-}
-
-/* bouton valider */
-#btn-valider {
-  background-color: #999;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: not-allowed;
-  margin-top: 15px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-#btn-valider:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-#btn-valider:enabled {
-  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-  cursor: pointer;
-}
-
-#btn-valider:enabled:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-}
-
-#btn-valider:enabled:active {
-  transform: translateY(0);
-}
-
-.error-message {
-  color: #e74c3c;
-  font-size: 0.85rem;
-  margin-top: 10px;
   text-align: center;
 }
 
@@ -356,15 +120,105 @@ body {
   text-align: left;
   padding: 10px 15px;
   border-radius: 4px;
-  margin-top: 15px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
 
+/* Modale */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #5a9fb8;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 20;
+  min-width: 300px;
+}
 
-/* =========================
-   utilitaires
-========================= */
+.modal h2 {
+  margin-bottom: 15px;
+  color: #5a9fb8;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Formulaire modale */
+#form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form-contact label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#form-contact input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+#btn-valider {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: not-allowed;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+#btn-valider:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+#btn-valider:enabled {
+  background-color: #4caf50;
+  cursor: pointer;
+}
+
+#btn-valider:enabled:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Classe utilitaire */
 .hidden {
   display: none;
 }
