@@ -18,14 +18,22 @@ const inputTelephone = document.getElementById('input-telephone');
 function openModal() {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
+  // Petit délai pour déclencher l'animation
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 10);
 }
 
 function closeModal() {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-  form.reset();
-  btnValider.disabled = true;
-  errorMessage.classList.add('hidden');
+  modal.classList.remove('show');
+  // Attendre la fin de l'animation avant de cacher
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+    form.reset();
+    btnValider.disabled = true;
+    errorMessage.classList.add('hidden');
+  }, 300);
 }
 
 // ========== VALIDATION DES CHAMPS ==========
