@@ -280,7 +280,7 @@ body {
 #form-contact input {
   padding: 12px 14px;
 
-  border: none;
+  border: 1px solid var(--border-soft);
   border-radius: 8px;
 
   background-color: #fbfdff;
