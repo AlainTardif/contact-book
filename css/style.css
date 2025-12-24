@@ -33,7 +33,7 @@
 ========================= */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #f4f7fb 0%, #eef4f8 100%);
+  background: linear-gradient(135deg, #d4dce6 0%, #c5d3dd 100%);
   color: var(--text-main);
   min-height: 100vh;
   padding: 20px;
@@ -347,6 +347,17 @@ body {
   font-size: 0.85rem;
   margin-top: 10px;
   text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: #5a9fb8;
+  color: #fff;
+  text-align: left;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 
