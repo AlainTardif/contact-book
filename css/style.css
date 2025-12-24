@@ -1,97 +1,163 @@
-/* Reset de base */
+/* =========================
+   reset de base
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   variables couleurs (design system)
+========================= */
+:root {
+  --bg-page: #f4f7fb;
+  --surface: #ffffff;
+
+  --primary: #fff;        /* bleu pastel */
+  --primary-soft: #4a7288;   /* bleu très clair */
+  --accent: #a6c8b8;         /* vert doux */
+
+  --border-soft: #dce6ee;
+  --border-strong: #c8d6e2;
+
+  --text-main: #2b2b2b;
+  --text-muted: #6b7280;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+/* =========================
+   page
+========================= */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #5a9fb8 0%, #e0a050 100%);
-  color: #333;
+  background: linear-gradient(135deg, #f4f7fb 0%, #eef4f8 100%);
+  color: var(--text-main);
   min-height: 100vh;
   padding: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Conteneur principal */
+/* =========================
+   conteneur principal
+========================= */
 .container {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  border: 2px solid #5a9fb8;
-  border-radius: 8px;
+
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
 }
 
-/* Header */
+/* =========================
+   header
+========================= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5a9fb8;
-  padding: 10px 15px;
-  border-radius: 4px;
+
+  background-color: var(--primary-soft);
+  padding: 12px 16px;
+  border-radius: 8px;
   margin-bottom: 15px;
   width: 100%;
+
+  border: 1px solid var(--border-soft);
 }
 
 .header h1 {
   font-size: 1.2rem;
-  color: #1a1a2e;
+  color: var(--primary);
+  font-weight: 600;
 }
 
+/* bouton + */
 .btn-add {
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--accent);
+  color: #ffffff;
+
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+
   font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.08s ease, filter 0.15s ease;
 }
 
 .btn-add:hover {
-  background-color: #45a049;
+  filter: brightness(0.95);
 }
 
-/* Formulaire affichage */
+.btn-add:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   formulaire affichage
+========================= */
 .form-display {
   display: flex;
   gap: 10px;
-  padding: 10px;
-  border: 1px solid #00bcd4;
-  border-radius: 4px;
+
+  padding: 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+
   margin-bottom: 15px;
+  background-color: #f9fbfd;
 }
 
 .form-display span {
   flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px;
+
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+
   text-align: left;
-  font-size: 0.85rem;
-  color: #999;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+
+  background-color: var(--surface);
 }
 
-/* Séparateur résultat */
+/* =========================
+   séparateur résultat
+========================= */
 .result-divider {
-  background-color: #e0a050;
-  color: #333;
+  background-color: var(--primary-soft);
+  color: var(--primary);
+
   text-align: center;
-  padding: 8px;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 10px;
+
+  border-radius: 8px;
+  font-weight: 600;
+
   margin-bottom: 15px;
+  border: 1px solid var(--border-soft);
 }
 
-/* Liste des contacts */
+/* =========================
+   liste des contacts
+========================= */
 #contacts-list {
   display: flex;
   flex-direction: column;
@@ -101,94 +167,153 @@ body {
 .contact-row {
   display: flex;
   gap: 10px;
-  padding: 10px;
-  border: 1px solid #00bcd4;
-  border-radius: 4px;
+
+  padding: 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+
+  background-color: var(--surface);
 }
 
 .contact-row span {
   flex: 1;
   text-align: center;
+  color: var(--text-main);
 }
 
-/* Overlay */
+/* =========================
+   overlay
+========================= */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+
+  background-color: rgba(15, 23, 42, 0.55);
   z-index: 10;
 }
 
-/* Modale */
+/* =========================
+   modale
+========================= */
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #1a1a2e;
-  border: 2px solid #00bcd4;
-  border-radius: 8px;
+
+  background-color: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+
   padding: 20px;
   z-index: 20;
-  min-width: 300px;
+
+  min-width: 320px;
+  box-shadow: var(--shadow);
 }
 
 .modal h2 {
   margin-bottom: 15px;
-  color: #00bcd4;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
+
   background: none;
   border: none;
-  color: #eee;
+
+  color: var(--text-muted);
   font-size: 1.5rem;
   cursor: pointer;
+
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
-/* Formulaire modale */
+.btn-close:hover {
+  background-color: var(--primary-soft);
+  color: var(--text-main);
+}
+
+/* =========================
+   formulaire modale
+========================= */
 #form-contact {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 #form-contact label {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+
+  color: var(--text-main);
+  font-size: 0.95rem;
 }
 
 #form-contact input {
-  padding: 8px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #2a2a3e;
-  color: #eee;
+  padding: 10px 12px;
+
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+
+  background-color: #fbfdff;
+  color: var(--text-main);
+
+  outline: none;
 }
 
+#form-contact input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(127, 174, 199, 0.25);
+}
+
+/* bouton valider */
 #btn-valider {
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--accent);
+  color: #ffffff;
+
   border: none;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 12px;
+
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
+
+  margin-top: 6px;
+  font-weight: 600;
+
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+#btn-valider:hover {
+  filter: brightness(0.95);
+}
+
+#btn-valider:active {
+  transform: scale(0.99);
 }
 
 #btn-valider:disabled {
-  background-color: #666;
+  background-color: #cbd5e1;
+  color: #ffffff;
   cursor: not-allowed;
+  filter: none;
 }
 
-/* Classe utilitaire */
+/* =========================
+   utilitaires
+========================= */
 .hidden {
   display: none;
 }
