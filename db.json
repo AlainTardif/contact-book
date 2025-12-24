@@ -1,18 +1,3 @@
 {
-  "contacts": [
-    {
-      "id": "0a6d",
-      "nom": "Doumut",
-      "prenom": "Fabien",
-      "email": "fabiendoumu@gmail.fr",
-      "telephone": "0238911354"
-    },
-    {
-      "id": "edac",
-      "nom": "Labbé",
-      "prenom": "Tise",
-      "email": "labbetise@gmai.fr",
-      "telephone": "0232445655"
-    }
-  ]
+  "contacts": []
 }

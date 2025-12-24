@@ -33,7 +33,7 @@ function closeModal() {
     form.reset();
     btnValider.disabled = true;
     errorMessage.classList.remove('show');
-  }, 500);
+  }, 700);
 }
 
 // ========== VALIDATION DES CHAMPS ==========
