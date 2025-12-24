@@ -76,7 +76,7 @@ body {
 /* Séparateur résultat */
 .result-divider {
   background-color: #e0a050;
-  color: #fff;
+  color: #333;
   text-align: center;
   padding: 8px;
   border-radius: 4px;
