@@ -45,31 +45,34 @@
   <div id="overlay" class="overlay hidden"></div>
 
   <!-- Modale -->
-  <div id="modal" class="modal hidden">
-    <button id="btn-close-modal" class="btn-close">×</button>
-    <h2>Nouveau contact</h2>
+ <form id="form-contact">
+  <fieldset>
+    <legend>Informations du contact</legend>
     
-    <form id="form-contact">
-      <label>Nom:
-        <input type="text" id="input-nom" required>
-      </label>
-      
-      <label>Prénom:
-        <input type="text" id="input-prenom" required>
-      </label>
-      
-      <label>Email:
-        <input type="email" id="input-email" required>
-      </label>
-      
-      <label>Téléphone:
-        <input type="tel" id="input-telephone" required>
-      </label>
-      
-      <p id="error-message" class="error-message hidden"></p>
-      <button type="submit" id="btn-valider" disabled>Valider</button>
-    </form>
-  </div>
+    <div class="input-group">
+      <input type="text" id="input-nom" placeholder=" " required>
+      <label for="input-nom">Nom</label>
+    </div>
+    
+    <div class="input-group">
+      <input type="text" id="input-prenom" placeholder=" " required>
+      <label for="input-prenom">Prénom</label>
+    </div>
+    
+    <div class="input-group">
+      <input type="email" id="input-email" placeholder=" " required>
+      <label for="input-email">Email</label>
+    </div>
+    
+    <div class="input-group">
+      <input type="tel" id="input-telephone" placeholder=" " required>
+      <label for="input-telephone">Téléphone</label>
+    </div>
+  </fieldset>
+  
+  <p id="error-message" class="error-message"></p>
+  <button type="submit" id="btn-valider" disabled>Valider</button>
+</form>
 
   <script src="js/app.js"></script>
 </body>

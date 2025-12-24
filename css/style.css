@@ -217,22 +217,34 @@ body {
 }
 
 /* Formulaire modale */
+/* Formulaire modale */
 #form-contact {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-#form-contact label {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: var(--text-main);
-  font-size: 0.9rem;
+#form-contact fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
 }
 
-#form-contact input {
-  padding: 10px;
+#form-contact legend {
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+/* Groupe input avec floating label */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 12px 6px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background-color: var(--surface);
@@ -241,9 +253,30 @@ body {
   transition: border-color 0.2s;
 }
 
-#form-contact input:focus {
+.input-group input:focus {
   outline: none;
   border-color: var(--primary);
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background-color: var(--surface);
+  padding: 0 4px;
+}
+
+/* Label monte quand focus ou champ rempli */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.75rem;
+  color: var(--primary);
 }
 
 #btn-valider {
