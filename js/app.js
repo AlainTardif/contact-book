@@ -91,18 +91,8 @@ async function addContact(event) {
   };
 
   try {
-    const response = await fetch('http://localhost:3000/contacts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newContact)
-    });
-    const contact = await response.json();
-    displayContact(contact);
-    closeModal();
-  } catch (error) {
-    console.log('Erreur ajout contact:', error);
+    const response = await fetch(`${CONFIG.API_URL}/contacts`);
   }
-}
 
 // ========== ÉVÉNEMENTS ==========
 btnOpenModal.addEventListener('click', openModal);
