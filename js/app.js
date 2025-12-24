@@ -97,7 +97,6 @@ async function addContact(event) {
 // ========== ÉVÉNEMENTS ==========
 btnOpenModal.addEventListener('click', openModal);
 btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
 
 // Validation en temps réel
 inputNom.addEventListener('input', checkFormValidity);
