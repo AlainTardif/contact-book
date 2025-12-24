@@ -88,6 +88,18 @@ body {
   background-color: var(--surface);
 }
 
+.form-display span:first-child {
+  text-align: left;
+}
+
+.form-display span:nth-child(2) {
+  text-align: center;
+}
+
+.form-display span:last-child {
+  text-align: right;
+}
+
 /* Séparateur résultat */
 .result-divider {
   background-color: var(--primary-soft);
@@ -108,8 +120,8 @@ body {
 
 .contact-row {
   display: flex;
-  gap: 10px;
-  padding: 12px 30px;
+  justify-content: space-between;
+  padding: 12px 40px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background-color: var(--surface);
@@ -117,8 +129,19 @@ body {
 
 .contact-row span {
   flex: 1;
-  text-align: center;
   color: var(--text-main);
+}
+
+.contact-row span:first-child {
+  text-align: left;
+}
+
+.contact-row span:nth-child(2) {
+  text-align: center;
+}
+
+.contact-row span:last-child {
+  text-align: right;
 }
 
 /* Footer */
