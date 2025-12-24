@@ -280,14 +280,14 @@ body {
 #form-contact input {
   padding: 12px 14px;
 
-  border: 2px solid var(--border-soft);
+  border: none;
   border-radius: 8px;
 
   background-color: #fbfdff;
   color: var(--text-main);
 
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+  transition: box-shadow 0.3s ease, background-color 0.2s ease;
   font-size: 0.95rem;
 }
 
