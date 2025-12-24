@@ -237,11 +237,13 @@ body {
 
   padding: 4px 8px;
   border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-close:hover {
   background-color: var(--primary-soft);
-  color: var(--text-main);
+  color: var(--primary);
+  transform: scale(1.15);
 }
 
 /* =========================
