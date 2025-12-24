@@ -1,0 +1,103 @@
+// ========== SÉLECTION DES ÉLÉMENTS ==========
+const btnOpenModal = document.getElementById('btn-open-modal');
+const btnCloseModal = document.getElementById('btn-close-modal');
+const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
+const form = document.getElementById('form-contact');
+const btnValider = document.getElementById('btn-valider');
+const contactsList = document.getElementById('contacts-list');
+
+// Champs du formulaire
+const inputNom = document.getElementById('input-nom');
+const inputPrenom = document.getElementById('input-prenom');
+const inputEmail = document.getElementById('input-email');
+const inputTelephone = document.getElementById('input-telephone');
+
+// ========== FONCTIONS MODALE ==========
+function openModal() {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+}
+
+function closeModal() {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+  form.reset();
+  btnValider.disabled = true;
+}
+
+// ========== VALIDATION DES CHAMPS ==========
+function checkFormValidity() {
+  const isValid = 
+    inputNom.value.trim() !== '' &&
+    inputPrenom.value.trim() !== '' &&
+    inputEmail.value.trim() !== '' &&
+    inputTelephone.value.trim() !== '';
+  
+  btnValider.disabled = !isValid;
+}
+
+// ========== AFFICHER UN CONTACT ==========
+function displayContact(contact) {
+  const row = document.createElement('div');
+  row.classList.add('contact-row');
+  row.innerHTML = `
+    <span>${contact.nom}</span>
+    <span>${contact.prenom}</span>
+    <span>${contact.email}</span>
+  `;
+  contactsList.appendChild(row);
+}
+
+// ========== CHARGER LES CONTACTS ==========
+async function loadContacts() {
+  try {
+    const response = await fetch('http://localhost:3000/contacts');
+    const contacts = await response.json();
+    contacts.forEach(contact => displayContact(contact));
+  } catch (error) {
+    console.log('Serveur json-server non démarré');
+  }
+}
+
+// ========== AJOUTER UN CONTACT ==========
+async function addContact(event) {
+  event.preventDefault();
+
+  const newContact = {
+    nom: inputNom.value.trim(),
+    prenom: inputPrenom.value.trim(),
+    email: inputEmail.value.trim(),
+    telephone: inputTelephone.value.trim()
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/contacts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newContact)
+    });
+    const contact = await response.json();
+    displayContact(contact);
+    closeModal();
+  } catch (error) {
+    console.log('Erreur ajout contact:', error);
+  }
+}
+
+// ========== ÉVÉNEMENTS ==========
+btnOpenModal.addEventListener('click', openModal);
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+// Validation en temps réel
+inputNom.addEventListener('input', checkFormValidity);
+inputPrenom.addEventListener('input', checkFormValidity);
+inputEmail.addEventListener('input', checkFormValidity);
+inputTelephone.addEventListener('input', checkFormValidity);
+
+// Soumission formulaire
+form.addEventListener('submit', addContact);
+
+// Charger contacts au démarrage
+loadContacts();
